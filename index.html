@@ -8,6 +8,29 @@
         <script src="script.js" defer></script>
     </head>
     <body>
+        <form class="addbook">
+            <ul>
+                <li>
+                    <label for="bookTitle">Title:</label>
+                    <input type="text" name="name" id="bookTitle" required>
+                </li>
+                <li>
+                    <label for="bookAuthor">Author:</label>
+                    <input type="text" name="author" id="bookAuthor" required>
+                </li>
+                <li>
+                    <label for="bookPages">Pages:</label>
+                    <input type="number" name="pages" id="bookPages" required>
+                </li>
+                <li>
+                    <label for="bookRead"> Read:</label>
+                    <input type="checkbox" name="read" id="bookRead"></li>
+                <li>
+                    <button type="submit" onclick="addBookToLibrary()">Add Book</button>
+                </li>
+            </ul>
+        </form>
+
         <table class="library">
             <thead>
                 <tr>
@@ -15,6 +38,7 @@
                     <th>Author</th>
                     <th>Pages</th>
                     <th>Read</th>
+                    <th>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
