@@ -1,19 +1,21 @@
 let myLibrary = [];
 
-function book(name, author, page, status){
+class book {
+  constructor (name, author, page, status){
     this.name = name;
     this.author = author;
     this.page = page;
     this.read = status;
   }
-  
-book.prototype.info = function(){
-  return this.name + " by " + this.author + ", " + this.page + "pages, " + (this.read ? "read" : "not read yet");
-}
 
-book.prototype.changeReadStatus = function(){
-  this.read ? this.read = false : this.read = true;
-} 
+  get info() {
+    return this.name + " by " + this.author + ", " + this.page + "pages, " + (this.read ? "read" : "not read yet");
+  }
+
+  changeReadStatus() {
+    this.read ? this.read = false : this.read = true;
+  }
+}
 
 function addBookToLibrary(){
   let name = document.getElementById('bookTitle').value;
