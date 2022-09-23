@@ -26,13 +26,27 @@ class book {
 }
 
 function addBookToLibrary() {
-  let name = document.getElementById("bookTitle").value;
-  let author = document.getElementById("bookAuthor").value;
-  let page = document.getElementById("bookPages").value;
-  let read = document.getElementById("bookRead").checked;
+  let name = document.getElementById("bookTitle");
+  let author = document.getElementById("bookAuthor");
+  let page = document.getElementById("bookPages");
+  let read = document.getElementById("bookRead");
+  const msg = "This field is required!";
 
-  if (!name || !author || !page) {
-    alert("Please enter all the details");
+  if (name.validity.valueMissing) {
+    name.setCustomValidity(msg);
+    name.reportValidity();
+    return;
+  }
+
+  if (author.validity.valueMissing) {
+    name.setCustomValidity(msg);
+    name.reportValidity();
+    return;
+  }
+
+  if (page.validity.valueMissing) {
+    name.setCustomValidity(msg);
+    name.reportValidity();
     return;
   }
 
@@ -136,5 +150,17 @@ function refreshTable() {
 function sortData() {
   myLibrary.sort((book1, book2) => book1.name.localeCompare(book2.name));
 }
+
+//add form validation
+const pageNum = document.getElementById("bookPages");
+
+pageNum.addEventListener("input", () => {
+  if (!Number.isInteger(+pageNum.value)) {
+    pageNum.setCustomValidity("An Integer is expected!");
+    pageNum.reportValidity();
+  } else {
+    pageNum.setCustomValidity("");
+  }
+});
 
 refreshTable();

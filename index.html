@@ -18,21 +18,21 @@
                 <ul>
                     <li>
                         <label for="bookTitle">Title:</label>
-                        <input type="text" name="name" id="bookTitle">
+                        <input type="text" name="name" id="bookTitle" required>
                     </li>
                     <li>
                         <label for="bookAuthor">Author:</label>
-                        <input type="text" name="author" id="bookAuthor">
+                        <input type="text" name="author" id="bookAuthor" required>
                     </li>
                     <li>
                         <label for="bookPages">Pages:</label>
-                        <input type="number" name="pages" id="bookPages">
+                        <input type="text" name="pages" id="bookPages" required>
                     </li>
                     <li>
                         <label for="bookRead"> Read:</label>
                         <input type="checkbox" name="read" id="bookRead"></li>
                     <li>
-                        <button type="submit" onclick="addBookToLibrary();return false;">Add Book</button>
+                        <button type="button" onclick="addBookToLibrary()">Add Book</button>
                     </li>
                 </ul>
             </form>
