@@ -50,11 +50,11 @@ function addBookToLibrary() {
     return;
   }
 
-  document.querySelector(".addbook").reset();
-  let record = new book(name, author, page, read);
+  let record = new book(name.value, author.value, page.value, read.checked);
   myLibrary.push(record);
   sortData();
   refreshTable();
+  document.querySelector(".addbook").reset();
 }
 
 function createBtn(type, index) {
